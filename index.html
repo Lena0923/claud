@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Portfolio Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #2a5298;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h3 {
+            color: #1e3c72;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section {
+            background: white;
+            margin: 1.5rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .wbs-container {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .wbs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .wbs-table th,
+        .wbs-table td {
+            padding: 12px 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .wbs-table th {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .wbs-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .wbs-table tr:hover {
+            background-color: #e8f2ff;
+        }
+
+        .deliverable {
+            background-color: #e3f2fd !important;
+            font-weight: bold;
+        }
+
+        .work-package {
+            background-color: #f3e5f5 !important;
+            font-weight: 600;
+        }
+
+        .task {
+            background-color: #f8f9fa !important;
+        }
+
+        .wbs-id {
+            font-family: monospace;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+
+        .level-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .level-deliverable { background-color: #2196f3; }
+        .level-work-package { background-color: #9c27b0; }
+        .level-task { background-color: #4caf50; }
+
+        .duration {
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .dependencies {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .jira-highlights {
+            background: linear-gradient(135deg, #0052cc, #2684ff);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .jira-highlights h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .highlight-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 1rem;
+            }
+            
+            .wbs-table {
+                font-size: 0.8rem;
+            }
+            
+            .wbs-table th,
+            .wbs-table td {
+                padding: 8px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cybersecurity Portfolio Development Project</h1>
+            <p>Strategic Portfolio Planning & Implementation</p>
+        </header>
+
+        <div class="section">
+            <h2>Project Mission & Vision</h2>
+            <p>This project supports my personal mission by strengthening my expertise in cybersecurity and building tangible evidence of my skills. It reflects my values of continuous learning, professionalism, and self-improvement.</p>
+            
+            <p>Completing this project moves me toward my long-term vision of becoming a skilled cybersecurity professional with a strong portfolio that demonstrates practical experience and recognized certifications.</p>
+            
+            <p>This project advances my strategic goals of gaining industry-relevant credentials, developing hands-on experience, and positioning myself competitively for internships and future career opportunities in the cybersecurity field.</p>
+        </div>
+
+        <div class="section">
+            <h2>Career & Personal Impact</h2>
+            <p>This project will advance my career by enhancing my cybersecurity expertise, earning industry-recognized credentials like CompTIA Security+, and creating a professional portfolio to showcase to potential employers and internship providers. It will also offer valuable networking opportunities and practical experience through hands-on projects and internship engagements.</p>
+            
+            <p>On a personal level, this project will strengthen my problem-solving and critical-thinking abilities, increase my confidence in applying cybersecurity knowledge, and provide a sense of accomplishment as I achieve meaningful milestones within a structured timeframe.</p>
+            
+            <p>Through this project, I will develop technical proficiency in cybersecurity concepts and tools, gain project management experience by planning and tracking portfolio progress, and deepen my understanding of industry standards and professional expectations.</p>
+        </div>
+
+        <div class="section">
+            <h2>📊 Stakeholder Analysis</h2>
+            <p>The following stakeholder analysis identifies key individuals and organizations involved in or affected by this cybersecurity portfolio development project, along with their engagement strategies.</p>
+
+            <h3>Stakeholder Table</h3>
+            <div class="wbs-container">
+                <table class="wbs-table">
+                    <thead>
+                        <tr>
+                            <th>Stakeholder</th>
+                            <th>Category</th>
+                            <th>Power</th>
+                            <th>Interest</th>
+                            <th>Engagement Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Student (Me)</strong></td>
+                            <td>Internal</td>
+                            <td class="duration">High</td>
+                            <td class="duration">High</td>
+                            <td>Actively manage my portfolio progress and continuously improve to meet project goals.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Academic Advisor</strong></td>
+                            <td>Internal</td>
+                            <td>Medium</td>
+                            <td class="duration">High</td>
+                            <td>Keep updated with progress; seek advice and guidance frequently.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Career Services Office</strong></td>
+                            <td>Internal</td>
+                            <td>Medium</td>
+                            <td class="duration">High</td>
+                            <td>Collaborate for resume reviews, portfolio workshops, and career counseling.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Potential Employers</strong></td>
+                            <td>External</td>
+                            <td class="duration">High</td>
+                            <td class="duration">High</td>
+                            <td>Engage directly; tailor portfolio content to meet with their expectations.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peers/Colleagues</strong></td>
+                            <td>Internal</td>
+                            <td>Low</td>
+                            <td>Medium</td>
+                            <td>Share progress occasionally; request peer feedback on design and clarity.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Faculty Members</strong></td>
+                            <td>Internal</td>
+                            <td>Medium</td>
+                            <td class="duration">High</td>
+                            <td>Seek mentorship and constructive feedback on portfolio quality and academic alignment.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alumni Network</strong></td>
+                            <td>External</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td>Network periodically and request feedback from alumni in Computer Information System.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Professional Associations</strong></td>
+                            <td>External</td>
+                            <td>Medium</td>
+                            <td>Medium</td>
+                            <td>Stay engaged with association standards, trends, and professional showcases.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Regulatory/Accreditation Body</strong></td>
+                            <td>Regulatory</td>
+                            <td class="duration">High</td>
+                            <td>Low</td>
+                            <td>Ensure compliance with standards; monitor requirements but limited direct involvement.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Family/Support System</strong></td>
+                            <td>External</td>
+                            <td>Low</td>
+                            <td class="duration">High</td>
+                            <td>Update them on milestones; request support and encouragement.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Power-Interest Grid</h3>
+            <div style="background: white; padding: 2rem; border-radius: 10px; margin: 1rem 0; text-align: center;">
+                <div style="display: inline-block; border: 2px solid #333; position: relative;">
+                    <table style="border-collapse: collapse; width: 600px; height: 400px;">
+                        <tr>
+                            <td style="border: 1px solid #333; width: 20%; height: 20%; vertical-align: top; padding: 10px; font-size: 12px; background: #f0f0f0;"><strong>High Interest</strong></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 20%; text-align: center; vertical-align: middle; background: #e3f2fd;"><strong>Family</strong><br><em>Keep Informed</em></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 20%; text-align: center; vertical-align: middle; background: #c8e6c9;"><strong>Career Services<br>Potential Employers</strong><br><em>Manage Closely</em></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #333; width: 20%; height: 60%; vertical-align: middle; padding: 10px; font-size: 12px; background: #f0f0f0; writing-mode: vertical-lr; text-orientation: mixed;"><strong>Medium Interest</strong></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 60%; text-align: center; vertical-align: middle; background: #fff3e0;"><strong>Peers/Colleagues</strong></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 60%; text-align: center; vertical-align: middle; background: #f3e5f5;"><strong>Professionals</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #333; width: 20%; height: 20%; vertical-align: bottom; padding: 10px; font-size: 12px; background: #f0f0f0;"><strong>Low Interest</strong></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 20%; text-align: center; vertical-align: middle; background: #fce4ec;"><em>Monitor</em></td>
+                            <td style="border: 1px solid #333; width: 40%; height: 20%; text-align: center; vertical-align: middle; background: #fff9c4;"><strong>Accreditation Body</strong><br><em>Keep Satisfied</em></td>
+                        </tr>
+                    </table>
+                    <div style="position: absolute; bottom: -30px; left: 0; right: 0; text-align: center;">
+                        <strong>Power</strong><br>
+                        <span style="margin-right: 100px;">Low</span>
+                        <span style="margin-right: 100px;">Medium</span>
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💰 Project Budget</h2>
+            <p>The following budget breakdown outlines all anticipated costs for the cybersecurity portfolio development project, including labor, equipment, materials, and services with contingency planning.</p>
+
+            <div class="wbs-container">
+                <table class="wbs-table">
+                    <thead>
+                        <tr>
+                            <th>Cost Item</th>
+                            <th>Quantity/Hrs</th>
+                            <th>Rate/Price</th>
+                            <th>Total Cost</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="deliverable">
+                            <td colspan="5"><strong>LABOR COSTS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Developer</td>
+                            <td>80</td>
+                            <td>$35</td>
+                            <td class="duration">$2800</td>
+                            <td>Portfolio site setup, coding, deployment</td>
+                        </tr>
+                        <tr>
+                            <td>Designer</td>
+                            <td>50</td>
+                            <td>$30</td>
+                            <td class="duration">$1500</td>
+                            <td>UI/UX, themes, layouts</td>
+                        </tr>
+                        <tr>
+                            <td>Project Manager</td>
+                            <td>60</td>
+                            <td>$25</td>
+                            <td class="duration">$1500</td>
+                            <td>Planning, reviews, coordination</td>
+                        </tr>
+                        <tr>
+                            <td>Analyst/Writer</td>
+                            <td>40</td>
+                            <td>$28</td>
+                            <td class="duration">$1120</td>
+                            <td>Documenting tools, training, reflections</td>
+                        </tr>
+                        <tr class="work-package">
+                            <td><strong>LABOR SUBTOTAL</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$6920</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 10px;"><td colspan="5"></td></tr>
+                        <tr class="deliverable">
+                            <td colspan="5"><strong>EQUIPMENT/SOFTWARE</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Domain & Hosting (1 yr)</td>
+                            <td>1</td>
+                            <td>$120</td>
+                            <td class="duration">$48</td>
+                            <td>Portfolio hosting + domain</td>
+                        </tr>
+                        <tr>
+                            <td>GitHub Pro</td>
+                            <td>1</td>
+                            <td>$48</td>
+                            <td class="duration">$48</td>
+                            <td>Version control & repo management</td>
+                        </tr>
+                        <tr>
+                            <td>Office/Docs License</td>
+                            <td>1</td>
+                            <td>$60</td>
+                            <td class="duration">$60</td>
+                            <td>Docs & collaboration tools</td>
+                        </tr>
+                        <tr class="work-package">
+                            <td><strong>EQUIPMENT SUBTOTAL</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$228</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 10px;"><td colspan="5"></td></tr>
+                        <tr class="deliverable">
+                            <td colspan="5"><strong>MATERIALS</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Stock Images/Icons</td>
+                            <td>1</td>
+                            <td>$50</td>
+                            <td class="duration">$30</td>
+                            <td>Graphics & portfolio visuals</td>
+                        </tr>
+                        <tr>
+                            <td>Training/Lab Resources</td>
+                            <td>1</td>
+                            <td>$800</td>
+                            <td class="duration">$800</td>
+                            <td>Practice cybersecurity labs</td>
+                        </tr>
+                        <tr>
+                            <td>Documentation Assets</td>
+                            <td>1</td>
+                            <td>$30</td>
+                            <td class="duration">$50</td>
+                            <td>Templates & documentation</td>
+                        </tr>
+                        <tr class="work-package">
+                            <td><strong>MATERIALS SUBTOTAL</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$880</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 10px;"><td colspan="5"></td></tr>
+                        <tr class="deliverable">
+                            <td colspan="5"><strong>SERVICES</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Hosting</td>
+                            <td>1</td>
+                            <td>$75</td>
+                            <td class="duration">$150</td>
+                            <td>Semester cloud hosting (AWS/Netlify)</td>
+                        </tr>
+                        <tr>
+                            <td>Third-party APIs</td>
+                            <td>1</td>
+                            <td>$40</td>
+                            <td class="duration">$40</td>
+                            <td>Optional API integration</td>
+                        </tr>
+                        <tr>
+                            <td>Security Assessment</td>
+                            <td>1</td>
+                            <td>$150</td>
+                            <td class="duration">$150</td>
+                            <td>External security testing</td>
+                        </tr>
+                        <tr class="work-package">
+                            <td><strong>SERVICES SUBTOTAL</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$265</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr style="height: 15px;"><td colspan="5"></td></tr>
+                        <tr style="background-color: #e3f2fd; font-weight: bold;">
+                            <td><strong>SUBTOTAL DIRECT COSTS</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$8293</strong></td>
+                            <td><strong>Sum of all categories</strong></td>
+                        </tr>
+                        <tr style="background-color: #fff3e0; font-weight: bold;">
+                            <td><strong>Contingency (20%)</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration"><strong>$1658.6</strong></td>
+                            <td><strong>Risk reserve</strong></td>
+                        </tr>
+                        <tr style="background-color: #c8e6c9; font-weight: bold; font-size: 1.1em;">
+                            <td><strong>TOTAL PROJECT BUDGET</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td class="duration" style="font-size: 1.2em;"><strong>$9951.6</strong></td>
+                            <td><strong>Final project budget</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="budget-summary" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #1e3c72; margin-bottom: 0.5rem;">Labor Costs</h3>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #2a5298;">$6,920</p>
+                    <p style="font-size: 0.9rem; color: #666;">83.4% of direct costs</p>
+                </div>
+                <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #1e3c72; margin-bottom: 0.5rem;">Materials & Equipment</h3>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #2a5298;">$1,108</p>
+                    <p style="font-size: 0.9rem; color: #666;">13.4% of direct costs</p>
+                </div>
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #1e3c72; margin-bottom: 0.5rem;">Services</h3>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: #2a5298;">$265</p>
+                    <p style="font-size: 0.9rem; color: #666;">3.2% of direct costs</p>
+                </div>
+                <div style="background: #c8e6c9; padding: 1.5rem; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #1e3c72; margin-bottom: 0.5rem;">Total with Contingency</h3>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: #1b5e20;">$9,951.60</p>
+                    <p style="font-size: 0.9rem; color: #666;">Includes 20% risk buffer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📋 Project Methodology</h2>
+            <p>This project follows an Agile methodology with Scrum practices, organized into structured phases with continuous feedback loops and iterative improvements.</p>
+
+            <div style="background: white; padding: 2rem; border-radius: 10px; margin: 2rem 0; overflow-x: auto;">
+                <div style="display: flex; flex-direction: column; align-items: center; min-width: 1000px;">
+                    
+                    <!-- Feedback Circle -->
+                    <div style="width: 80px; height: 80px; background: #00bfa5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 20px;">
+                        Feedback
+                    </div>
+
+                    <!-- Main Process Flow -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 30px;">
+                        
+                        <!-- Plan Phase -->
+                        <div style="display: flex; flex-direction: column; align-items: center; background: #c8e6c9; padding: 20px; border-radius: 10px; width: 18%;">
+                            <div style="font-weight: bold; margin-bottom: 15px; color: #1b5e20;">Plan</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%;">
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Initiate</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Mission Vision & Strategy</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">SWOT Analysis</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Project Objective</div>
+                            </div>
+                        </div>
+
+                        <!-- Execute Phase -->
+                        <div style="display: flex; flex-direction: column; align-items: center; background: #ffcdd2; padding: 20px; border-radius: 10px; width: 35%;">
+                            <div style="font-weight: bold; margin-bottom: 15px; color: #c62828;">Execute</div>
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%;">
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">Scope, Budget, Project Charter</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">Resume Building (LinkedIn Setup)</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">Build Portfolio</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">Networking Skills (Cisco)</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">IT Specialist (Cisco)</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.75em;">Junior Cybersecurity Analyst (Cisco)</div>
+                            </div>
+                        </div>
+
+                        <!-- Test Phase -->
+                        <div style="display: flex; flex-direction: column; align-items: center; background: #c5cae9; padding: 20px; border-radius: 10px; width: 15%;">
+                            <div style="font-weight: bold; margin-bottom: 15px; color: #3949ab;">Test</div>
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">CompTIA Certification (maybe not until after the semester)</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Share with classmates and mentor feedback on Portfolio</div>
+                            </div>
+                        </div>
+
+                        <!-- Deliver Phase -->
+                        <div style="display: flex; flex-direction: column; align-items: center; background: #ffab91; padding: 20px; border-radius: 10px; width: 20%;">
+                            <div style="font-weight: bold; margin-bottom: 15px; color: #d84315;">Deliver</div>
+                            <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Complete final business to business project</div>
+                                <div style="background: white; padding: 8px; border-radius: 5px; text-align: center; font-size: 0.8em;">Submit Job Applications Portfolio and LinkedIn account</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Traditional Box -->
+                    <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: #e1f5fe; padding: 15px; border-radius: 8px; border: 2px solid #0277bd; width: 120px; text-align: center;">
+                        <div style="font-weight: bold; color: #0277bd;">Land an entry-level job in IT</div>
+                        <hr style="margin: 10px 0; border-color: #0277bd;">
+                        <div style="color: #0277bd; font-size: 0.9em;">Traditional</div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div style="display: flex; justify-content: space-between; width: 100%; margin-top: 30px;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #00bfa5; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 10px;">W2</div>
+                            <div style="background: #4db6ac; color: white; padding: 5px 15px; border-radius: 15px;">August</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #00bfa5; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 10px;">W3</div>
+                            <div style="background: #4db6ac; color: white; padding: 5px 15px; border-radius: 15px;">September</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #00bfa5; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 10px;">W4</div>
+                            <div style="background: #4db6ac; color: white; padding: 5px 15px; border-radius: 15px;">October</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #00bfa5; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 10px;">W5 | W6 | W7 | W8</div>
+                            <div style="background: #4db6ac; color: white; padding: 5px 15px; border-radius: 15px;">November</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="background: #00bfa5; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 10px;">W9</div>
+                            <div style="background: #4db6ac; color: white; padding: 5px 15px; border-radius: 15px;">December</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px; font-style: italic; color: #666;">
+                    <strong>Figure:</strong> Project methodology diagram (Predictive).
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Project Tool Selection & Justification</h2>
+            
+            <div class="methodology-grid">
+                <div class="section" style="margin: 0;">
+                    <h3>Agile Methodology with Scrum</h3>
+                    <p>For this project, I am using an Agile methodology with Scrum practices. Work is divided into sprints, and tasks are managed through a backlog and a sprint board in Jira. This approach allows me to break the project into smaller parts, track progress, and adjust as needed. Agile fits well because it is flexible and encourages continuous improvement.</p>
+                </div>
+                <div class="section" style="margin: 0;">
+                    <h3>Jira Project Management Platform</h3>
+                    <p>I chose Jira because it is widely used in the industry for project management. It supports both Scrum and Kanban boards, which makes it flexible for different project needs. Jira helps me organize my backlog, track progress visually on the board, and link tasks that depend on each other. This makes it easier to manage my work professionally and prepare for real-world projects.</p>
+                </div>
+            </div>
+
+            <div class="jira-highlights">
+                <h3>✅ Jira Implementation Highlights</h3>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <h4>Backlog Overview</h4>
+                        <p>Shows 26 work items organized by project phases</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Status Tracking</h4>
+                        <p>Tasks categorized as "IN PROGRESS", "TO DO" with clear epic assignments and color-coded labels</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Status Overview</h4>
+                        <p>35 total work items with progress visualization showing task distribution across different states (To Do: 29, In Progress: 4, Done: 2)</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Epic Organization</h4>
+                        <p>Project broken down into key epics with timeline management</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Project Timeline</h4>
+                        <p>Well-organized sprint planning with clear deliverable dates and assignee tracking (all assigned to Fatima Zahra)</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Professional Preparation</h4>
+                        <p>Using industry-standard tools to demonstrate project management capabilities to potential employers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Project Deliveries - Work Breakdown Structure</h2>
+            <p>Below is the comprehensive Work Breakdown Structure (WBS) for the Cybersecurity Portfolio Development project, organized into deliverables, work packages, and individual tasks with dependencies and durations.</p>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="level-indicator level-deliverable"></span>
+                    <span><strong>Deliverable</strong> - Major project outcomes</span>
+                </div>
+                <div class="legend-item">
+                    <span class="level-indicator level-work-package"></span>
+                    <span><strong>Work Package</strong> - Groups of related tasks</span>
+                </div>
+                <div class="legend-item">
+                    <span class="level-indicator level-task"></span>
+                    <span><strong>Task</strong> - Individual work items</span>
+                </div>
+            </div>
+
+            <div class="wbs-container">
+                <table class="wbs-table">
+                    <thead>
+                        <tr>
+                            <th>WBS ID</th>
+                            <th>Level</th>
+                            <th>Task/Work Package Name</th>
+                            <th>Duration (Days)</th>
+                            <th>Dependencies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Main Project -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Cybersecurity Portfolio Development</strong></td>
+                            <td class="duration">--</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.1 Portfolio Planning & Setup -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1.1</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Portfolio Planning & Setup</strong></td>
+                            <td class="duration">13</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.1.1 Requirements & Planning -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.1.1</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Requirements & Planning</td>
+                            <td class="duration">7</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.1.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Define portfolio objectives</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.1.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Research cybersecurity portfolio best practices</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.1.1.1 – Define portfolio objectives</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.1.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Identify required components</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.1.1.2 – Research cybersecurity portfolio best practices</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.1.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Select target audience</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.1.1.3 – Identify required components</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.1.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Approve portfolio outline</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.1.1.4 – Select target audience</td>
+                        </tr>
+                        
+                        <!-- 1.1.2 Environment Setup -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.1.2</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Environment Setup</td>
+                            <td class="duration">6</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.2.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Choose portfolio platform</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.2.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Prepare online portfolio space</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.1.2.1 – Choose portfolio platform</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.2.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Configure design theme/template</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.1.2.2 – Prepare online portfolio space</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.2.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Create project folder structure</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.1.2.3 – Configure design theme/template</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.1.2.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Version control setup (GitHub)</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.1.2.4 – Create project folder structure</td>
+                        </tr>
+                        
+                        <!-- 1.2 Skills & Professional Documentation -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1.2</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Skills & Professional Documentation</strong></td>
+                            <td class="duration">16</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.2.1 Cybersecurity Tools & Practices -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.2.1</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Cybersecurity Tools & Practices</td>
+                            <td class="duration">9</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.1.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Document use of security tools (Wireshark, Nmap, Nessus)</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.1.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Summarize secure coding practices</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.2.1.1 – Gather CompTIA Security+ study materials</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.1.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Create a simple network security diagram (firewall, VPN)</td>
+                            <td class="duration">3</td>
+                            <td class="dependencies">1.2.1.2 – Develop study schedule</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.1.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Reflect on lessons from labs/class exercises</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.2.1.3 – Complete practice exams</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.1.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Finalize documentation for portfolio</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.2.1.4 – Document preparation progress</td>
+                        </tr>
+                        
+                        <!-- 1.2.2 Professional Skills Documentation -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.2.2</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Professional Skills Documentation</td>
+                            <td class="duration">7</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.2.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>List cybersecurity technical skills</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.2.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Summarize soft skills</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.2.2.1 – List cybersecurity technical skills</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.2.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Collect academic certificates</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.2.2.2 – Summarize soft skills</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.2.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Draft personal statement / career goals</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.2.2.3 – Collect academic transcripts/certificates</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.2.2.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Finalize professional profile</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.2.2.4 – Draft personal statement / career goals</td>
+                        </tr>
+                        
+                        <!-- 1.3 Practical Experience Showcase -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1.3</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Practical Experience Showcase</strong></td>
+                            <td class="duration">16</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.3.1 Academic/Project Work -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.3.1</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Academic/Project Work</td>
+                            <td class="duration">6</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.1.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Collect completed course projects</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.1.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Write project summaries</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.3.1.1 – Collect completed course projects</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.1.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Format code samples/screenshots</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.1.2 – Write project summaries</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.1.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Highlight problem-solving skills</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.1.3 – Format code samples/screenshots</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.1.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Upload course projects to portfolio</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.3.1.4 – Highlight problem-solving skills</td>
+                        </tr>
+                        
+                        <!-- 1.3.2 Hands-On Training & Internships -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.3.2</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Hands-On Training & Internships</td>
+                            <td class="duration">10</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.2.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Document cybersecurity challenge activities</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.2.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Write reflections on security practice challenges</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.2.1 – Document lab exercises</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.2.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Summarize security labs and exercises</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.2.2 – Document cybersecurity challenge experience</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.2.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Record results from practice challenges</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.2.3 – Record internship experiences</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.3.2.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Capture lessons from cybersecurity challenges</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.3.2.4 – Reflect on practical learning outcomes</td>
+                        </tr>
+                        
+                        <!-- 1.4 Portfolio Design & Development -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1.4</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Portfolio Design & Development</strong></td>
+                            <td class="duration">11</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.4.1 Portfolio Content Development -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.4.1</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Portfolio Content Development</td>
+                            <td class="duration">6</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.1.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Draft homepage introduction</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.1.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Create 'About Me' section</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.1.1 – Draft homepage introduction</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.1.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Add certifications & skills section</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.1.2 – Create 'About Me' section</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.1.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Add projects/experience showcase</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.1.3 – Add certifications & skills section</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.1.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Add downloadable resume</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.1.4 – Add projects/experience showcase</td>
+                        </tr>
+                        
+                        <!-- 1.4.2 Website/Portfolio Technical Setup -->
+                        <tr class="work-package">
+                            <td class="wbs-id">1.4.2</td>
+                            <td><span class="level-indicator level-work-package"></span>Work Package</td>
+                            <td>Website/Portfolio Technical Setup</td>
+                            <td class="duration">5</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.2.1</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Configure navigation structure</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.2.2</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Implement responsive design</td>
+                            <td class="duration">2</td>
+                            <td class="dependencies">1.4.2.1 – Configure navigation structure</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.2.3</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Optimize for accessibility</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.2.2 – Implement responsive design</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.2.4</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Test cross-browser compatibility</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.2.3 – Optimize for accessibility</td>
+                        </tr>
+                        <tr class="task">
+                            <td class="wbs-id">1.4.2.5</td>
+                            <td><span class="level-indicator level-task"></span>Task</td>
+                            <td>Backup portfolio files</td>
+                            <td class="duration">1</td>
+                            <td class="dependencies">1.4.2.4 – Test cross-browser compatibility</td>
+                        </tr>
+                        
+                        <!-- 1.5 Review, Testing & Deployment -->
+                        <tr class="deliverable">
+                            <td class="wbs-id">1.5</td>
+                            <td><span class="level-indicator level-deliverable"></span>Deliverable</td>
+                            <td><strong>Review, Testing & Deployment</strong></td>
+                            <td class="duration">13</td>
+                            <td class="dependencies">--</td>
+                        </tr>
+                        
+                        <!-- 1.5.1 Portfolio Review -->
